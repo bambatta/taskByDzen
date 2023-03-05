@@ -23,4 +23,21 @@
         font-size: 32px;
         margin: 0;
     }
+
+    &__selects {
+        display: flex;
+        gap: 30px;
+
+        &-head {
+            margin: 0;
+            color: gray;
+            font-size: 16px;
+        }
+
+        &-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
 }
