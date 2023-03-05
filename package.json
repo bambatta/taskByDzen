@@ -12,6 +12,8 @@
     "nuxt": "^3.2.3"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "bootstrap-vue-3": "^0.5.1",
     "sass": "^1.58.3"
   }
 }

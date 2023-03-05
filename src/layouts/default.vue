@@ -1,7 +1,11 @@
 <template>
     <div>
         <BaseTopMenu/>
-        <NuxtPage/>
+        <div class="default-page">
+            <BaseNavigationMenu/>
+            <NuxtPage/>
+        </div>
+        
     </div>
 </template>
 

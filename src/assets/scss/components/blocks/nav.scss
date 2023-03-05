@@ -1,0 +1,28 @@
+.nav {
+    margin-top: 60px;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+
+        &-item {
+            text-decoration: none;
+            
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-size: 18px;
+        color: gray;
+        &:hover {
+            color: black;
+        }
+
+        &--active {
+            border-bottom: 3px solid greenyellow;
+        }
+    }
+}

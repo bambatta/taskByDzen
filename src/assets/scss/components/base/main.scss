@@ -1,0 +1,26 @@
+.main {
+    margin-top: 60px;
+    margin-left: 120px;
+    margin-right: 120px;
+    display: block;
+    width: 100%;
+    
+    &__page {
+
+        &-logo {
+            width: 35px;
+            object-fit: cover;
+        }
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;   
+        gap: 25px;
+    }
+
+    &__title {
+        font-size: 32px;
+        margin: 0;
+    }
+}

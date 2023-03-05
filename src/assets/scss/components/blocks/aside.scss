@@ -1,0 +1,42 @@
+.aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 5px 20px 16px 3px rgba(0,0,0,0.25);
+    width: 100%;
+    max-width: 197px;
+    padding-top: 50px;
+
+    &__profile {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        
+        &-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        &-setup {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0;
+            right: 20%;
+            box-shadow: 0px 0px 26px 3px rgba(219,219,219,1);
+            border-style: none;
+        }
+
+        &-setting {
+            width: 100%;
+            max-width: 20px;
+        }
+    }
+}

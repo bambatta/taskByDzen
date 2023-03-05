@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    height: 74px;
+    background-color: #fff;
+    box-shadow: 0 0 28px rgba(0,0,0,0.25);
+    justify-content: center;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+        max-width: 1540px;
+        margin: 0 auto;
+        
+    }
+
+    &__logo {
+        max-width: 300px;
+        margin-right: 145px;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        text-decoration: none;
+        color: greenyellow;
+
+        &-img {
+            max-width: 300px;
+            max-height: 45px;
+        }
+
+        &-text {
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+    }
+
+    &__search {
+        width: 100%;
+        max-width: 413px;
+
+        .serach {
+            width: 100%;
+            border-radius: 5px;
+            border-style: none;
+            background-color: rgb(240, 240, 240);
+            padding: 4px 10px;
+        }
+    }
+
+    &__clock {
+        margin-left: auto;
+        display: flex;
+        gap: 30px;
+    }
+
+}
