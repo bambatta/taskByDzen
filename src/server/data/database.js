@@ -34,8 +34,8 @@ export const products = [
     serialNumber: 1234,
     isNew: 1,
     photo: '/img/monitor.jpg',
-    title: 'Product 1',
-    type: 'Monitors',
+    title: 'Product Monitor',
+    type: 'Computer',
     specification: 'Specification 1',
     guarantee: {
       start: '2017-06-29 12:09:33',
@@ -53,7 +53,7 @@ export const products = [
     serialNumber: 4321,
     isNew: 0,
     photo: '/img/monitor.jpg',
-    title: 'Product 2',
+    title: 'Product Tablet',
     type: 'Monitors',
     specification: 'Specification 2',
     guarantee: {

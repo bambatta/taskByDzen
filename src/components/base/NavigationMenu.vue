@@ -9,9 +9,9 @@
             </div>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__list-item"><NuxtLink class="nav__link nav__link--active">Приход</NuxtLink></li>
+                    <li class="nav__list-item"><NuxtLink to="/" class="nav__link nav__link--active">Приход</NuxtLink></li>
                     <li class="nav__list-item"><NuxtLink class="nav__link">Группы</NuxtLink></li>
-                    <li class="nav__list-item"><NuxtLink class="nav__link">Продукты</NuxtLink></li>
+                    <li class="nav__list-item"><NuxtLink to="/products" class="nav__link">Продукты</NuxtLink></li>
                     <li class="nav__list-item"><NuxtLink class="nav__link">Пользователи</NuxtLink></li>
                     <li class="nav__list-item"><NuxtLink class="nav__link">Настройки</NuxtLink></li>
                 </ul>

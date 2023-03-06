@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="main__content">
+        <div class="main__content main__content--full">
             <div class="products">
                 <div v-for="product in products" :key="product.id" class="products__item">
                     <div class="products__item-unit">
@@ -32,25 +32,26 @@
                             <p class="products__naming-serial">{{ product.serialNumber }}</p>
                         </div>
                     </div>
-                    <div class="parishes__inner">
 
-                        <div class="parishes__date">
-                            <div class="parishes__date-short">
-                                <p>04 <span>/</span> 12</p>
-                            </div>
-                            <div class="parishes__date-full">
-                                <p>04 <span>/</span> Апрель <span>/</span>2017</p>
-                            </div>
+                    <div class="products__expires-date">
+                        <div class="products__expires-item">
+                            <p>C</p>
+                            <span>{{ dataTime(product.guarantee.start) }}</span>
                         </div>
-                        <div class="parishes__price">
-                            <p class="parishes__price-foreign">2500$</p>
-                            <p class="parishes__price-own">250000.50UAH</p>
+                        <div class="products__expires-item">
+                            <p>По</p>
+                            <span>{{ dataTime(product.guarantee.end) }}</span>
                         </div>
-                        <div class="parishes__delete">
-                            <button class="parishes__delete-btn">
-                                <img src="/img/trash.png" class="parishes__delete-img" alt="trash">
-                            </button>
-                        </div>
+                    </div>
+                    
+                    <div class="parishes__price">
+                        <p class="parishes__price-foreign">{{ product.price[0].value }} {{ product.price[0].symbol }}</p>
+                        <p class="parishes__price-own">{{ product.price[1].value }} {{ product.price[1].symbol }}</p>
+                    </div>
+                    <div class="parishes__delete">
+                        <button class="parishes__delete-btn">
+                            <img src="/img/trash.png" class="parishes__delete-img" alt="trash">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -60,14 +61,17 @@
 
 <script setup>
 
-const products = ref()
+import moment from "moment";
+
+const products = ref();
+const arg = ref("")
 
 const productType = ref(null),
     productSpecification = ref(null);
 
 const optionsType = ref([
     { value: null, text: 'Выберете тип' },
-    { value: 'Moniotors', text: 'Monitors' },
+    { value: 'Monitors', text: 'Monitors' },
 ])
 
 const optionsSpecification = ref([
@@ -76,11 +80,32 @@ const optionsSpecification = ref([
     { value: 'Specification 2', text: 'Specification 2' },
 ])
 
+function dataTime(e) {
+    return moment(e).format(("DD / MM / YYYY"));
+}
+
 async function getProduct() {
     const data = await $fetch('/api/products');
 
     products.value = data
 }
+
+watch(() => productType.value, (prev) => {
+      if(prev == 'Monitors') {
+        products.value = products.value.filter(product => product.type == 'Monitors')
+      } else if(prev == null) {
+        getProduct()
+      }
+});
+
+watch(() => productSpecification.value, (prev) => {
+      if(prev == 'Specification 1') {
+        products.value = products.value.filter(product => product.specification == 'Specification 1')
+      } else if(prev == null) {
+        getProduct()
+      }
+});
+
 
 getProduct();
 

@@ -23,8 +23,8 @@
         &-unit {
                 display: flex;
                 align-items: center;
-                width: 30%;
-                justify-content: space-between;
+                width: 20%;
+                gap: 30px;
         }
 
         &--photo {
@@ -45,12 +45,24 @@
 
             &.green {
                 background-color: green;
+                
             }
         }
+
+        &--text {
+            margin: 0;
+        }
+
+        &--green {
+            color: green;
+        }
+
+        
     }
 
     &__naming {
-
+        display: flex;
+        flex-direction: column;
         &-head,
         &-serial {
             margin: 0;
@@ -59,8 +71,36 @@
         }
 
         &-head {
-            font-size: 18px;
+            font-size: 16px;
             color: black;
         }
+    }
+
+    &__expires {
+
+        &-date {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            
+            p {
+                margin: 0;
+                font-size: 12px;
+                color: gray;
+            }
+            span {
+                color: gray;
+                font-size: 16px;
+            }
+        }
+        
+
+        
     }
 }
